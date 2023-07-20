@@ -15,5 +15,6 @@ spec:
       containers:
         - name: nginx
           image: nginx-image:latest
+          imagePullPolicy: Never
           ports:
             - containerPort: 80
