@@ -20,3 +20,24 @@ docker build -t nginx-image .
 docker run -d --name nginx-server -p 8080:80 nginx-image
 ```
 
+
+* Troubleshooting in Minikube:
+
+If you encouter an `ErrImagePull` status while deploying nginx, try the following:
+
+1- Add `imagePullPolicy: Never` in the deployment file:
+
+```python
+spec:
+      containers:
+      - name: nginx
+        image: nginx-image:latest
+        imagePullPolicy: Never
+```
+2- Run the following command to set the Docker environment to use minikube:
+
+```bash
+eval $(minikube -p minikube docker-env)
+```
+
+
