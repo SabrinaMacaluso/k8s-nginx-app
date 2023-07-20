@@ -12,3 +12,11 @@ Set your Git username and email:
 git config --global user.name "yourusername"
 git config --global user.email "youremail"
 ```
+
+Build the app docker image:
+
+```bash
+docker build -t nginx-image .
+docker run -d --name nginx-server -p 8080:80 nginx-image
+```
+
