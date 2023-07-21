@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-canary-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/canary: "true"  # Enable canary annotations
+    nginx.ingress.kubernetes.io/canary-weight: "10"  # Set the weight for the canary to 10%
+spec:
+  rules:
+    - host: mylocalapp.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nginx-canary-service
+                port:
+                  number: 80
+
+
