@@ -20,6 +20,29 @@ docker build -t nginx-image .
 docker run -d --name nginx-server -p 8080:80 nginx-image
 ```
 
+To enable the Ingress addon in Minikube, use the following command:
+
+```bash
+minikube addons enable ingress
+```
+
+To create a local domain for testing purposes, you can modify the hosts file:
+
+```bash
+sudo nano /etc/hosts
+```
+Add the following
+
+```bash
+<Minikube-IP> mylocalapp.com
+```
+To get the Minikube IP address:
+
+```bash
+minikube ip
+```
+
+
 
 # Troubleshooting in Minikube:
 
