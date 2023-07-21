@@ -1,4 +1,7 @@
 # k8s-nginx-canary-app
+![j (2)](https://github.com/SabrinaMacaluso/k8s-nginx-canary-app/assets/104983001/01d5ff1d-9be5-436d-a4dd-0d00099b30be)
+
+
 
 Generate SSH key pair
 
